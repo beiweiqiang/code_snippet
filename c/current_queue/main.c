@@ -1,3 +1,9 @@
+/**
+ * 并发队列
+ * 有两个 lock, 分别用于 enqueue 和 dequeue,
+ * 使得这两个操作可以并发执行
+ */
+
 #include <stdlib.h>
 #include <pthread.h>
 #include <stdio.h>

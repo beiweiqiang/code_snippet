@@ -40,7 +40,6 @@ int get(counter_t *c) {
 void * thread_handler(void * args) {
   counter_t * c = (counter_t *) args;
   increment(c);
-  printf("thread: %d \n", get(c));
 }
 
 int main(void) {
@@ -48,13 +47,17 @@ int main(void) {
   size_t i;
   counter_t c;
   init(&c);
+  clock_t begin = clock();
 
-  for (i = 0; i < 100; i++) {
+  for (i = 0; i < 10000; i++) {
     pthread_create(&thr, NULL, thread_handler, (void *) &c);
   }
   pthread_join(thr, NULL);
 
   printf("%d \n", get(&c));
+  clock_t end = clock();
+  double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+  printf("%lf s", time_spent); // 1.259360 s
 
   return 0;
 }

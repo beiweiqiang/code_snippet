@@ -3,6 +3,7 @@
  * 如何避免 writer 的 starve 状态 ?
  * 当一个 writer 想要进行处理, 会等待目前正在 process 的 readers 完成,
  * 但是后来想要获得 lock 的 readers 会被阻塞直到 writer 完成
+ * 可以观察到, 当 writers 数量为 1 时, readers 数量不会继续增加
  */
 
 #include <stdio.h>

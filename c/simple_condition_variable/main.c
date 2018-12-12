@@ -1,5 +1,5 @@
 /**
- *
+ * 实现简单的 condition variable
  */
 
 #include <stdlib.h>

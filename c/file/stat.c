@@ -1,3 +1,9 @@
+/**
+ * stat 程序
+ * ./stat file
+ * 展示 file 的信息
+ */
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <assert.h>

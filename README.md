@@ -42,5 +42,7 @@
 
 - 搭建 https 静态服务器, 附带如何生成 ssl 证书. [link](./nodejs/https_static_server)
 
+- nodejs 环境下使用 import 语法. [link](./nodejs/enable_import)
+
 
 

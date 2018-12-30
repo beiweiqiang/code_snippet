@@ -22,9 +22,17 @@
 
 - 生产者消费者模式 producer consumer. [link](./c/producer_consumer)
 
+- 信号量, semaphore. [link](./c/semaphore)
 
+- 简单的, 条件变量, condition variable. [link](./c/simple_condition_variable)
+
+- 简单的, 并发计数器, current counter. [link](./c/simple_current_counter)
+
+- 简单的, 生产者消费者模式, producer consumer. [link](./c/simple_producer_connsumer)
 
 ## JavaScript
+
+- ajax 实现, plain js. [link](./js/ajax_plain_js)
 
 ## Nodejs
 

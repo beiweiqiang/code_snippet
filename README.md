@@ -2,7 +2,7 @@
 
 ## C
 
-- 并发的 hash table (link)[./c/current_hash_table]
+- 并发的 hash table [link](./c/current_hash_table)
 
 ## JavaScript
 

@@ -34,9 +34,9 @@
 
 - ajax 实现, plain js. [link](./js/ajax_plain_js)
 
-- 解析 excel 为 json. [link](./c/excel_to_json)
+- 解析 excel 为 json. [link](./js/excel_to_json)
 
-- 将 png 图片转换为 ico. [link](./c/png_to_ico)
+- 将 png 图片转换为 ico. [link](./js/png_to_ico)
 
 ## Nodejs
 

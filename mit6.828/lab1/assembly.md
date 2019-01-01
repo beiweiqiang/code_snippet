@@ -62,6 +62,24 @@ eg:
 
 - 寄存器地址寻址, 加上一个偏移变量:
 
-\_variable(%eax)
+`\_variable(%eax)`
+
+- 对于数组中的整型进行寻址 (一个整型 4 个字节)
+
+`\_array(, %eax, 4)`
+
+- 立即数 和 偏移 进行寻址:
+
+`1(%eax)`
+
+- addressing a particular char in an array of 8-character records:
+
+**eax** 是想要的索引, **ebx** 是 char 偏移
+
+`\_array(%ebx, %eax, 8)`
+
+
+
+### 参考: [link](http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html)
 
 

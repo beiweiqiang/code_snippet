@@ -34,13 +34,13 @@
 
 - ajax 实现, plain js. [link](./js/ajax_plain_js)
 
-- 解析 excel 为 json. [link](./js/excel_to_json)
-
-- 将 png 图片转换为 ico. [link](./js/png_to_ico)
-
 - throttle 和 debounce. [link](./js/throttle_debounce)
 
 ## Nodejs
+
+- 解析 excel 为 json. [link](./nodejs/excel_to_json)
+
+- 将 png 图片转换为 ico. [link](./nodejs/png_to_ico)
 
 - 搭建 https 静态服务器, 附带如何生成 ssl 证书. [link](./nodejs/https_static_server)
 

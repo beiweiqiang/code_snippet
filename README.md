@@ -45,6 +45,12 @@
 - 搭建 https 静态服务器, 附带如何生成 ssl 证书. [link](./nodejs/https_static_server)
 
 - nodejs 环境下使用 import 语法. [link](./nodejs/enable_import)
+  
+- md5. [link](./nodejs/md5)
+
+- 快速构建 http 静态资源服务器. [link](./nodejs/http_static_server)
+
+- Nodejs 实现 http Digest Access Authentication. [link](nodejs/digest_access_authentication)
 
 ## MacOS
 

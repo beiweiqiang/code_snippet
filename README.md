@@ -36,6 +36,8 @@
 
 - throttle 和 debounce. [link](./js/throttle_debounce)
 
+- 文本复制到剪切板. [link](.js/copy_to_clipboard)
+
 ## Nodejs
 
 - 解析 excel 为 json. [link](./nodejs/excel_to_json)
@@ -67,4 +69,10 @@
 - socket program. [link](./python/socket_program)
 
 - web proxy server, 提供 cache 服务. [link](./python/web_proxy_server)
+
+## CSS
+
+- 禁止鼠标滚动. [link](css/prevent_scroll)
+
+- 最多展示两行, 两行以后省略号. [link](css/two_line_ellipsis)
 

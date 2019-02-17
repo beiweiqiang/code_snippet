@@ -1,0 +1,102 @@
+<!--
+复制到系统自带剪切板
+适配: mac, window, iphone, Android
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+</head>
+<body>
+
+<button onclick="copy('auto cheese xx')">copy: auto cheese xxxa</button>
+
+<script>
+  function copy(text) {
+    var reselectPrevious, selection, range, mark;
+    try {
+      // debugger;
+      reselectPrevious = deselectCurrent();
+
+      range = document.createRange();
+      selection = document.getSelection();
+
+      mark = document.createElement('mark');
+      mark.textContent = text;
+      document.body.appendChild(mark);
+
+      range.selectNode(mark);
+      selection.addRange(range);
+
+      var successful = document.execCommand('copy');
+      if (!successful) {
+        throw new Error('copy command was unsuccessful');
+      }
+    } catch (err) {
+      console.error('unable to copy, trying IE specific stuff');
+      try {
+        window.clipboardData.setData('text', text);
+      } catch (err) {
+        console.error('unable to copy, falling back to prompt');
+        window.prompt('Copy to clipboard: Ctrl+C, Enter', text);
+      }
+    } finally {
+      if (selection) {
+        if (typeof selection.removeRange == 'function') {
+          selection.removeRange(range);
+        } else {
+          selection.removeAllRanges();
+        }
+      }
+
+      if (mark) {
+        document.body.removeChild(mark);
+      }
+      reselectPrevious();
+    }
+  }
+
+  function deselectCurrent() {
+    var selection = document.getSelection();
+    if (!selection.rangeCount) {
+      return function () {};
+    }
+    var active = document.activeElement;
+
+    var ranges = [];
+    for (var i = 0; i < selection.rangeCount; i++) {
+      ranges.push(selection.getRangeAt(i));
+    }
+
+    switch (active.tagName.toUpperCase()) { // .toUpperCase handles XHTML
+      case 'INPUT':
+      case 'TEXTAREA':
+        active.blur();
+        break;
+
+      default:
+        active = null;
+        break;
+    }
+
+    selection.removeAllRanges();
+    return function () {
+      selection.type === 'Caret' &&
+      selection.removeAllRanges();
+
+      if (!selection.rangeCount) {
+        ranges.forEach(function(range) {
+          selection.addRange(range);
+        });
+      }
+
+      active &&
+      active.focus();
+    };
+  }
+
+</script>
+</body>
+</html>
